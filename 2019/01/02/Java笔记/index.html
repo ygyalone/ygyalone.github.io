@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="记录一些Java特性的知识点，便于复习。">
+  <meta name="description" content="记录一些Java特性，便于复习。">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java笔记">
 <meta property="og:url" content="http://yoursite.com/2019/01/02/Java笔记/index.html">
 <meta property="og:site_name" content="ygy">
-<meta property="og:description" content="记录一些Java特性的知识点，便于复习。">
+<meta property="og:description" content="记录一些Java特性，便于复习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-02T12:18:24.431Z">
+<meta property="og:updated_time" content="2019-01-02T17:17:13.741Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记">
-<meta name="twitter:description" content="记录一些Java特性的知识点，便于复习。">
+<meta name="twitter:description" content="记录一些Java特性，便于复习。">
 
 
 
@@ -353,12 +353,24 @@
                 
               
 
-              <time title="创建时间：2019-01-02 17:19:14 / 修改时间：20:18:24" itemprop="dateCreated datePublished" datetime="2019-01-02T17:19:14+08:00">2019-01-02</time>
+              <time title="创建时间：2019-01-02 17:19:14" itemprop="dateCreated datePublished" datetime="2019-01-02T17:19:14+08:00">2019-01-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-01-03 01:17:13" itemprop="dateModified" datetime="2019-01-03T01:17:13+08:00">2019-01-03</time>
               
             
           </span>
@@ -391,133 +403,110 @@
       
 
       
-        <p><strong>记录一些Java特性的知识点，便于复习。</strong></p>
+        <p>记录一些Java特性，便于复习。</p>
 <a id="more"></a>
-<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><ul>
-<li><strong>一般使用</strong></li>
-</ul>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><ol>
+<li><p>一般使用</p>
 <p>对象方法中代表对象自身。</p>
-<ul>
-<li><strong>内部类中的this</strong></li>
-</ul>
+</li>
+<li><p>内部类中的this</p>
 <p>可以指定OuterClass.this明确指定外部类对象引用。</p>
-<h2 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h2><ul>
-<li><strong>修饰属性</strong></li>
-</ul>
-<p>static关键字修饰的属性是类属性，可以通过类访问，也可以通过对象访问，所有对象共享这一个属性。</p>
-<ul>
-<li><strong>修饰方法</strong></li>
-</ul>
-<p>static关键字修饰的方法是类方法，可以通过类访问，也可以通过对象访问。</p>
-<ul>
-<li><strong>修饰内部类</strong></li>
-</ul>
-<p>静态内部类。</p>
-<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><ol>
-<li><p>声明一个常量或者常量属性。</p>
-</li>
-<li><p>修饰方法，该方法能被继承，但是不能被重写。</p>
-</li>
-<li><p>修饰类，该类不能被继承。</p>
-</li>
-<li><p>在内部类中使用局部变量时给变量添加final关键字 。final定义的变量会放在常量池，生命周期从局部变成全局。可以确保内部类不会访问到已经释放的参数，导致野指针访问的错误。</p>
 </li>
 </ol>
+<h2 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h2><ol>
+<li><p>修饰属性</p>
+<p>static关键字修饰的属性是类属性，可以通过类访问，也可以通过对象访问，所有对象共享这一个属性。</p>
+</li>
+<li><p>修饰方法</p>
+<p>static关键字修饰的方法是类方法，可以通过类访问，也可以通过对象访问。</p>
+</li>
+<li><p>修饰内部类</p>
+<p>静态内部类。</p>
+</li>
+</ol>
+<h2 id="final关键字"><a href="#final关键字" class="headerlink" title="final关键字"></a>final关键字</h2><ol>
+<li>声明一个常量或者常量属性。</li>
+<li>修饰方法，该方法能被继承，但是不能被重写。</li>
+<li>修饰类，该类不能被继承。</li>
+<li>在内部类中使用局部变量时给变量添加final关键字 。final定义的变量会放在常量池，生命周期从局部变成全局。可以确保内部类不会访问到已经释放的参数，导致野指针访问的错误。</li>
+</ol>
 <h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>代码块是用{}包起来的一块代码，有以下几种： </p>
-<ul>
-<li><strong>普通代码块</strong></li>
-</ul>
+<ol>
+<li><p>普通代码块</p>
 <p>方法中的代码块，起到作用域的作用。</p>
-<ul>
-<li><strong>构造代码块</strong></li>
-</ul>
+</li>
+<li><p>构造代码块</p>
 <p>类定义中的代码块，每次生成对象的时候会调用。在构造方法之前调用。</p>
-<ul>
-<li><strong>静态代码块</strong></li>
-</ul>
+</li>
+<li><p>静态代码块</p>
 <p>类定义中的代码块，有static关键字修饰。第一次使用类的时候会调用，只执行一次。</p>
-<ul>
-<li><strong>同步代码块</strong></li>
-</ul>
+</li>
+<li><p>同步代码块</p>
 <p>???</p>
+</li>
+</ol>
 <p>继承关系中的代码块:???</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlockTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//构造代码块</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        <span class="comment">//静态代码块</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//普通代码块</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ol>
-<li><p>不继承构造方法。</p>
-</li>
-<li><p>不继承static方法。</p>
-</li>
-<li><p>不继承final方法。</p>
-</li>
-<li><p>不继承private方法。</p>
-</li>
+<li>不继承构造方法。</li>
+<li>不继承static方法。</li>
+<li>不继承final方法。</li>
+<li>不继承private方法。</li>
 </ol>
 <h2 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h2><p>方法名和返回值相同，参数列表不同。</p>
 <h2 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h2><p>子类重写继承的方法，需要注意以下几点：</p>
 <ol>
-<li><p>重写方法抛出的异常不能是父类方法抛出的异常的父类。</p>
-</li>
-<li><p>重写方法的访问级别不能低于父类方法的访问级别。</p>
-</li>
-<li><p>private，static，final修饰的方法不能被重写，因为这几个关键字修饰的方法是不能被继承的。</p>
-</li>
+<li>重写方法抛出的异常不能是父类方法抛出的异常的父类。</li>
+<li>重写方法的访问级别不能低于父类方法的访问级别。</li>
+<li>private，static，final修饰的方法不能被重写，因为这几个关键字修饰的方法是不能被继承的。</li>
 </ol>
 <h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>抽象类作为类地抽象，有以下几个特点：</p>
 <ol>
-<li><p>抽象类不能实例化。</p>
-</li>
-<li><p>抽象方法必须定义在抽象类中。</p>
-</li>
-<li><p>抽象类不一定含有抽象方法。</p>
-</li>
+<li>抽象类不能实例化。</li>
+<li>抽象方法必须定义在抽象类中。</li>
+<li>抽象类不一定含有抽象方法。</li>
 </ol>
 <h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><ol>
-<li><p>接口中可以定义静态常量和方法。</p>
-</li>
-<li><p>静态常量默认是public static final修饰。</p>
-</li>
-<li><p>方法默认是public abstract修饰。</p>
-</li>
-<li><p>实现类必须实现协议方法，抽象类可以不实现协议方法。</p>
-</li>
-<li><p>JDK1.8之后可以提供方法的默认实现，方法名前加default关键字。</p>
-</li>
+<li>接口中可以定义静态常量和方法。</li>
+<li>静态常量默认是public static final修饰。</li>
+<li>方法默认是public abstract修饰。</li>
+<li>实现类必须实现协议方法，抽象类可以不实现协议方法。</li>
+<li>JDK1.8之后可以提供方法的默认实现，方法名前加default关键字。</li>
 </ol>
 <h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><p>内部类分为以下几种:</p>
-<ul>
-<li><strong>成员内部类</strong></li>
-</ul>
-<p>会和外部类对象绑定，内部类对象可以访问外部类对象的成员和方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String aStr = <span class="string">"hello world!"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//成员内部类</span></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(OuterClass.<span class="keyword">this</span>.aStr);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        InnerClass inner = <span class="keyword">new</span> InnerClass();</span><br><span class="line">        inner.sayHello();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>静态内部类</strong></li>
-</ul>
-<p><strong>不</strong>会和外部类对象绑定，内部类可以访问外部类的静态成员和静态方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String aStr = <span class="string">"hello world!"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//静态内部类</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(aStr);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        InnerClass inner = <span class="keyword">new</span> InnerClass();</span><br><span class="line">        inner.sayHello();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>方法内部类</strong></li>
-</ul>
-<p>会和外部类对象绑定，内部类对象可以访问外部类对象的成员和方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String aStr = <span class="string">"hello world!"</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//方法内部类</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span></span>&#123;</span><br><span class="line">            <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(OuterClass.<span class="keyword">this</span>.aStr);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        InnerClass inner = <span class="keyword">new</span> InnerClass();</span><br><span class="line">        inner.sayHello();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>匿名内部类</strong></li>
-</ul>
-<p>会和外部类对象绑定，内部类对象可以访问外部类对象的成员和方法。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IHello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String aStr = <span class="string">"hello world!"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">(IHello h)</span> </span>&#123;</span><br><span class="line">        h.hello();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//匿名内部类</span></span><br><span class="line">        sayHello(<span class="keyword">new</span> IHello() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(OuterClass.<span class="keyword">this</span>.aStr);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>为什么需要使用内部类？</strong></p>
 <ol>
-<li><p>可以实现多继承。</p>
-</li>
-<li><p>可以更好地隐藏内部实现。比如遵循某个协议，但是并不想让外部知道时。</p>
+<li><p>成员内部类</p>
+<p>会和外部类对象绑定，内部类对象可以访问外部类对象的成员和方法。</p>
 </li>
 </ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String aStr = <span class="string">"hello world!"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//成员内部类</span></span><br><span class="line">    <span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(OuterClass.<span class="keyword">this</span>.aStr);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        InnerClass inner = <span class="keyword">new</span> InnerClass();</span><br><span class="line">        inner.sayHello();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>静态内部类</p>
+<p><strong>不</strong>会和外部类对象绑定，内部类可以访问外部类的静态成员和静态方法。</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> String aStr = <span class="string">"hello world!"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//静态内部类</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            System.out.println(aStr);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        InnerClass inner = <span class="keyword">new</span> InnerClass();</span><br><span class="line">        inner.sayHello();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><p>方法内部类</p>
+<p>会和外部类对象绑定，内部类对象可以访问外部类对象的成员和方法。</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> String aStr = <span class="string">"hello world!"</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//方法内部类</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">InnerClass</span></span>&#123;</span><br><span class="line">            <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(OuterClass.<span class="keyword">this</span>.aStr);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        InnerClass inner = <span class="keyword">new</span> InnerClass();</span><br><span class="line">        inner.sayHello();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><p>匿名内部类</p>
+<p>会和外部类对象绑定，内部类对象可以访问外部类对象的成员和方法。</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">IHello</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">OuterClass</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String aStr = <span class="string">"hello world!"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">sayHello</span><span class="params">(IHello h)</span> </span>&#123;</span><br><span class="line">        h.hello();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//匿名内部类</span></span><br><span class="line">        sayHello(<span class="keyword">new</span> IHello() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(OuterClass.<span class="keyword">this</span>.aStr);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为什么需要使用内部类？</p>
+<ol>
+<li>可以实现多继承。</li>
+<li>可以更好地隐藏内部实现。比如遵循某个协议，但是并不想让外部知道时。</li>
+</ol>
 <h2 id="包与访问修饰符"><a href="#包与访问修饰符" class="headerlink" title="包与访问修饰符"></a>包与访问修饰符</h2><h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
-<li><p>属性可以设置默认值。</p>
-</li>
-<li><p>方法入参不可以设置默认值。</p>
-</li>
-<li><p>没有闭包(或者说函数)类型，回调只能通过[匿名]类来实现。不同于C，Objective-C和Swift。有点蛋疼…</p>
-</li>
+<li>属性可以设置默认值。</li>
+<li>方法入参不可以设置默认值。</li>
+<li>没有闭包(或者说函数)类型，回调只能通过[匿名]类来实现。不同于C，Objective-C和Swift。有点蛋疼…e-C和Swift。有点蛋疼…</li>
 </ol>
 
       
