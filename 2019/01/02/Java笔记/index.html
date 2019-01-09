@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="ygy">
 <meta property="og:description" content="记录一些Java特性，便于复习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-09T09:28:16.537Z">
+<meta property="og:updated_time" content="2019-01-09T11:03:50.586Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记">
 <meta name="twitter:description" content="记录一些Java特性，便于复习。">
@@ -370,7 +370,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-09 17:28:16" itemprop="dateModified" datetime="2019-01-09T17:28:16+08:00">2019-01-09</time>
+                <time title="修改时间：2019-01-09 19:03:50" itemprop="dateModified" datetime="2019-01-09T19:03:50+08:00">2019-01-09</time>
               
             
           </span>
@@ -415,10 +415,10 @@
 </ol>
 <h2 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h2><ol>
 <li><p>修饰属性</p>
-<p>static关键字修饰的属性是类属性，可以通过类访问，也可以通过对象访问，所有对象共享这一个属性。</p>
+<p>static关键字修饰的属性是类属性。</p>
 </li>
 <li><p>修饰方法</p>
-<p>static关键字修饰的方法是类方法，可以通过类访问，也可以通过对象访问。</p>
+<p>static关键字修饰的方法是类方法。</p>
 </li>
 <li><p>修饰内部类</p>
 <p>静态内部类。</p>
@@ -524,7 +524,7 @@
 <td style="text-align:center"></td>
 </tr>
 <tr>
-<td>default(internal)</td>
+<td>internal(default)</td>
 <td style="text-align:center">√</td>
 <td style="text-align:center">√</td>
 <td style="text-align:center"></td>
@@ -565,8 +565,10 @@
 </li>
 <li><p>finally</p>
 <ul>
-<li>finally会在return前执行。</li>
 <li>不管有没有异常，finally中的代码都会执行。</li>
+</ul>
+<ul>
+<li>如果在try代码块中return，finally会在return前执行。</li>
 </ul>
 </li>
 <li><p>throw，throws</p>
