@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="ygy">
 <meta property="og:description" content="记录一些Java特性，便于复习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-03T15:39:54.467Z">
+<meta property="og:updated_time" content="2019-01-09T09:28:16.537Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记">
 <meta name="twitter:description" content="记录一些Java特性，便于复习。">
@@ -370,7 +370,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-03 23:39:54" itemprop="dateModified" datetime="2019-01-03T23:39:54+08:00">2019-01-03</time>
+                <time title="修改时间：2019-01-09 17:28:16" itemprop="dateModified" datetime="2019-01-09T17:28:16+08:00">2019-01-09</time>
               
             
           </span>
@@ -546,7 +546,38 @@
 </tr>
 </tbody>
 </table>
-<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>为什么使用异常：</p>
+<ul>
+<li>可以统一使用异常来处理业务流程的错误</li>
+<li>可以更好的编写错误处理代码？</li>
+<li>更好地管理错误处理代码？</li>
+</ul>
+<ol>
+<li><p>异常继承结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Throwable</span><br><span class="line">├── Error</span><br><span class="line">|   └── ...</span><br><span class="line">└── Exception</span><br><span class="line">    ├── ...</span><br><span class="line">    └── RuntimeException</span><br></pre></td></tr></table></figure>
+<p>Throwable是异常的基类，直接子类有Error和Exception。</p>
+<p>Error是严重的问题，可能是系统级别的错误。程序一般不用处理此类错误。</p>
+<p>Exception是应用程序可以处理的异常情况，其中又分为受检异常和非受检异常。受检异常是Exception的子类（非RuntimeException类型），在编译期要求强制处理这类异常，或者往上抛出。非受检异常是RuntimeException类型或其子类型，编译期不要求强制处理这类异常，运行期如果抛出这类异常而没有处理，会导致程序崩溃。</p>
+</li>
+<li><p>try，catch</p>
+<p>使用try，catch来处理会方法抛出的异常。如果方法抛出异常，会按照catch代码块编写顺序寻找一个匹配的代码块并执行。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	exceptionTest();</span><br><span class="line">&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">finally</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>finally</p>
+<ul>
+<li>finally会在return前执行。</li>
+<li>不管有没有异常，finally中的代码都会执行。</li>
+</ul>
+</li>
+<li><p>throw，throws</p>
+<p>有受检异常抛出的方法在声明中需要添加throws关键字和抛出异常的类型，方法内部通过throw关键字将异常抛出。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">exceptionTest</span><span class="params">()</span> <span class="keyword">throws</span> Exception  </span>&#123;</span><br><span class="line">	<span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">"description"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自定义异常</p>
+<p>自定义异常可以继承Exception或者RuntimeException。至于继承哪一个，可以根据业务需求来决定，一般RuntimeException使用较多。</p>
+</li>
+</ol>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
 <li>属性可以设置默认值。</li>
 <li>方法入参不可以设置默认值。</li>
 <li>没有闭包(或者说函数)类型，回调只能通过[匿名]类来实现。不同于C，Objective-C和Swift。有点蛋疼…</li>
