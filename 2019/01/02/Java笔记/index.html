@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="ygy">
 <meta property="og:description" content="记录一些Java特性，便于复习。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-28T07:34:18.752Z">
+<meta property="og:updated_time" content="2019-01-31T11:34:01.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java笔记">
 <meta name="twitter:description" content="记录一些Java特性，便于复习。">
@@ -370,7 +370,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-28 15:34:18" itemprop="dateModified" datetime="2019-01-28T15:34:18+08:00">2019-01-28</time>
+                <time title="修改时间：2019-01-31 19:34:01" itemprop="dateModified" datetime="2019-01-31T19:34:01+08:00">2019-01-31</time>
               
             
           </span>
@@ -456,7 +456,7 @@
 <ol>
 <li>重写方法抛出的异常不能是父类方法抛出的异常的父类。</li>
 <li>重写方法的访问级别不能低于父类方法的访问级别。</li>
-<li>private，static，final修饰的方法不能被重写，因为这几个关键字修饰的方法是不能被继承的。</li>
+<li>private，static，final修饰的方法和构造方法不能被重写，因为这几个关键字修饰的方法是不能被继承的。</li>
 </ol>
 <h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><p>抽象类作为类的抽象，有以下几个特点：</p>
 <ol>
@@ -589,7 +589,114 @@
 <p>自定义异常可以继承Exception或者RuntimeException。至于继承哪一个，可以根据业务需求来决定，一般RuntimeException使用较多。</p>
 </li>
 </ol>
-<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>注解分为以下两种：</p>
+<ul>
+<li><p>自定义注解，补充说明代码。</p>
+</li>
+<li><p>元注解，补充说明其它注解。</p>
+</li>
+</ul>
+<p>元注解有以下几种：</p>
+<ol>
+<li><p><strong>@Retention </strong></p>
+<p>指定注解的保留策略</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>枚举值</th>
+<th>保留策略</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RetentionPolicy.SOURCE</td>
+<td>作用于源代码中，不会被编译到Class文件</td>
+</tr>
+<tr>
+<td>RetentionPolicy.CLASS</td>
+<td>注解将被记录在Class文件中，程序运行时不会保留</td>
+</tr>
+<tr>
+<td>RetentionPolicy.RUNTIME</td>
+<td>注解将被记录在Class文件中，并且在程序运行时也会保留</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><p><strong>@Target</strong></p>
+<p>指定注解的作用域</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>枚举值</th>
+<th>作用域</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ElementType.TYPE</td>
+<td>类型</td>
+</tr>
+<tr>
+<td>ElementType.FIELD</td>
+<td>字段</td>
+</tr>
+<tr>
+<td>ElementType.METHOD</td>
+<td>方法</td>
+</tr>
+<tr>
+<td>ElementType.PARAMETER</td>
+<td>方法参数</td>
+</tr>
+<tr>
+<td>ElementType.CONSTRUCTOR</td>
+<td>构造方法</td>
+</tr>
+<tr>
+<td>ElementType.LOCAL_VARIABLE</td>
+<td>局部变量</td>
+</tr>
+<tr>
+<td>ElementType.ANNOTATION_TYPE</td>
+<td>注解</td>
+</tr>
+<tr>
+<td>ElementType.PACKAGE</td>
+<td>包</td>
+</tr>
+<tr>
+<td>ElementType.TYPE_PARAMETER</td>
+<td>类型参数</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li><p><strong>@Inherited</strong></p>
+<p>指定注解被子类继承</p>
+</li>
+<li><p><strong>@Documented</strong></p>
+<p>指定注解包含在javadoc中</p>
+</li>
+</ol>
+<p>Java已经提供了几个内建注解：</p>
+<ol>
+<li><p>@Override 修饰方法，表示该方法是重写父类的方法。</p>
+</li>
+<li><p>@Deprecated 修饰方法，表示该方法已经过期，不建议使用。</p>
+</li>
+<li><p>@SuppressWarnings 消除警告。</p>
+</li>
+</ol>
+<p>自定义注解代码示例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@interface</span> MyAnnotation &#123;</span><br><span class="line">    <span class="comment">//注解中可以声明属性</span></span><br><span class="line">    <span class="function">String <span class="title">aValue</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="comment">//属性可以指定默认值</span></span><br><span class="line">    <span class="function">String <span class="title">anotherValue</span><span class="params">()</span><span class="keyword">default</span> "defaultValue"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>自定义注解的使用场景：</p>
+<p>自定义注解的保留策略一般指定为RetentionPolicy.RUNTIME。这样就可以在运行时通过反射拿到注解，从而执行一些其它操作。比如单元测试框架JUnit，在运行时通过反射获取有@Test注解标记的方法，这些方法将被作为测试方法执行。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
 <li><p>属性可以设置默认值。</p>
 </li>
 <li><p>方法入参不可以设置默认值。</p>
